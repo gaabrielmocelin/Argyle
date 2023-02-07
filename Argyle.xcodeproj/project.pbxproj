@@ -16,6 +16,7 @@
 		E17B65F92991F9060081E228 /* ArgyleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17B65F82991F9060081E228 /* ArgyleUITests.swift */; };
 		E17B65FB2991F9060081E228 /* ArgyleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17B65FA2991F9060081E228 /* ArgyleUITestsLaunchTests.swift */; };
 		E1A830DB2992CE19005E81DE /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A830DA2992CE19005E81DE /* SearchViewModel.swift */; };
+		E1A830DD2992DBD9005E81DE /* LinkItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A830DC2992DBD9005E81DE /* LinkItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		E17B65F82991F9060081E228 /* ArgyleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgyleUITests.swift; sourceTree = "<group>"; };
 		E17B65FA2991F9060081E228 /* ArgyleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgyleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E1A830DA2992CE19005E81DE /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		E1A830DC2992DBD9005E81DE /* LinkItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				E17B65E02991F9060081E228 /* Assets.xcassets */,
 				E17B65E22991F9060081E228 /* LaunchScreen.storyboard */,
 				E17B65E52991F9060081E228 /* Info.plist */,
+				E1A830DC2992DBD9005E81DE /* LinkItemView.swift */,
 			);
 			path = Argyle;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1A830DD2992DBD9005E81DE /* LinkItemView.swift in Sources */,
 				E17B65DC2991F9040081E228 /* SearchViewController.swift in Sources */,
 				E17B65D82991F9040081E228 /* AppDelegate.swift in Sources */,
 				E1A830DB2992CE19005E81DE /* SearchViewModel.swift in Sources */,

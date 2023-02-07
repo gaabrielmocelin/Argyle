@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class SearchViewController: UITableViewController {
     private let viewModel: SearchViewModel = SearchViewModel()
@@ -25,11 +26,14 @@ class SearchViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        setupSearchBar()
     }
 
     private func setupTableView() {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.dataSource = makeDataSource()
+
+        tableView.separatorStyle = .none
 
         var snapshot = SearchSnapshot()
         snapshot.appendSections(TableSection.allCases)
@@ -46,7 +50,7 @@ class SearchViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
@@ -62,7 +66,11 @@ extension SearchViewController {
     private func makeDataSource() -> SearchDatasource {
         SearchDatasource(tableView: tableView) { tableView, indexPath, item in
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-            cell.textLabel?.text = item.name
+
+            cell.contentConfiguration = UIHostingConfiguration {
+                LinkItemView(linkItem: item)
+            }
+
             return cell
         }
     }
