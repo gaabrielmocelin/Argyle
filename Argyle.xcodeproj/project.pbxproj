@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		E17B65D82991F9040081E228 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17B65D72991F9040081E228 /* AppDelegate.swift */; };
 		E17B65DA2991F9040081E228 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17B65D92991F9040081E228 /* SceneDelegate.swift */; };
-		E17B65DC2991F9040081E228 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17B65DB2991F9040081E228 /* ViewController.swift */; };
-		E17B65DF2991F9040081E228 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E17B65DD2991F9040081E228 /* Main.storyboard */; };
+		E17B65DC2991F9040081E228 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17B65DB2991F9040081E228 /* SearchViewController.swift */; };
 		E17B65E12991F9060081E228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E17B65E02991F9060081E228 /* Assets.xcassets */; };
 		E17B65E42991F9060081E228 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E17B65E22991F9060081E228 /* LaunchScreen.storyboard */; };
 		E17B65EF2991F9060081E228 /* ArgyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17B65EE2991F9060081E228 /* ArgyleTests.swift */; };
 		E17B65F92991F9060081E228 /* ArgyleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17B65F82991F9060081E228 /* ArgyleUITests.swift */; };
 		E17B65FB2991F9060081E228 /* ArgyleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17B65FA2991F9060081E228 /* ArgyleUITestsLaunchTests.swift */; };
+		E1A830DB2992CE19005E81DE /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A830DA2992CE19005E81DE /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +39,7 @@
 		E17B65D42991F9040081E228 /* Argyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Argyle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E17B65D72991F9040081E228 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E17B65D92991F9040081E228 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E17B65DB2991F9040081E228 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E17B65DE2991F9040081E228 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E17B65DB2991F9040081E228 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E17B65E02991F9060081E228 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E17B65E32991F9060081E228 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E17B65E52991F9060081E228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		E17B65F42991F9060081E228 /* ArgyleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArgyleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E17B65F82991F9060081E228 /* ArgyleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgyleUITests.swift; sourceTree = "<group>"; };
 		E17B65FA2991F9060081E228 /* ArgyleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgyleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E1A830DA2992CE19005E81DE /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +101,8 @@
 			children = (
 				E17B65D72991F9040081E228 /* AppDelegate.swift */,
 				E17B65D92991F9040081E228 /* SceneDelegate.swift */,
-				E17B65DB2991F9040081E228 /* ViewController.swift */,
-				E17B65DD2991F9040081E228 /* Main.storyboard */,
+				E17B65DB2991F9040081E228 /* SearchViewController.swift */,
+				E1A830DA2992CE19005E81DE /* SearchViewModel.swift */,
 				E17B65E02991F9060081E228 /* Assets.xcassets */,
 				E17B65E22991F9060081E228 /* LaunchScreen.storyboard */,
 				E17B65E52991F9060081E228 /* Info.plist */,
@@ -233,7 +233,6 @@
 			files = (
 				E17B65E42991F9060081E228 /* LaunchScreen.storyboard in Resources */,
 				E17B65E12991F9060081E228 /* Assets.xcassets in Resources */,
-				E17B65DF2991F9040081E228 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,8 +257,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E17B65DC2991F9040081E228 /* ViewController.swift in Sources */,
+				E17B65DC2991F9040081E228 /* SearchViewController.swift in Sources */,
 				E17B65D82991F9040081E228 /* AppDelegate.swift in Sources */,
+				E1A830DB2992CE19005E81DE /* SearchViewModel.swift in Sources */,
 				E17B65DA2991F9040081E228 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,14 +297,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E17B65DD2991F9040081E228 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E17B65DE2991F9040081E228 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E17B65E22991F9060081E228 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -366,7 +358,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +412,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -442,10 +434,9 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Argyle Test";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -471,10 +462,9 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Argyle Test";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
