@@ -7,14 +7,24 @@
 
 import Foundation
 
-enum NetworkError: Error {
+enum NetworkError: Error, Equatable {
     case unableToParseJson
     case noData
+    case unknown
+    case system(ErrorWrapper)
+}
+
+public struct ErrorWrapper: Equatable {
+    let error: Error
+
+    public static func == (lhs: Self, rhs: Self) -> Bool {
+        String(reflecting: lhs.error) == String(reflecting: rhs.error)
+    }
 }
 
 protocol NetworkService {
     @discardableResult
-    func request<Request: DataRequest>(_ request: Request, completion: @escaping (Result<Request.Response, Error>) -> Void) -> UUID
+    func request<Request: DataRequest>(_ request: Request, completion: @escaping (Result<Request.Response, NetworkError>) -> Void) -> UUID
     func cancel(requestUUID: UUID)
 }
 
@@ -22,7 +32,7 @@ final class RealNetworkService: NetworkService {
     var runningRequests: [UUID: URLSessionDataTask] = [:]
 
     @discardableResult
-    func request<Request: DataRequest>(_ request: Request, completion: @escaping (Result<Request.Response, Error>) -> Void) -> UUID {
+    func request<Request: DataRequest>(_ request: Request, completion: @escaping (Result<Request.Response, NetworkError>) -> Void) -> UUID {
         var urlRequest = URLRequest(url: request.url)
         urlRequest.httpMethod = request.method.rawValue
         urlRequest.allHTTPHeaderFields = request.headers
@@ -33,7 +43,7 @@ final class RealNetworkService: NetworkService {
             defer { self.runningRequests[uuid] = nil }
 
             if let error {
-                return completion(.failure(error))
+                return completion(.failure(.system(.init(error: error))))
             }
 
             guard let data else {
@@ -43,7 +53,7 @@ final class RealNetworkService: NetworkService {
             do {
                 try completion(.success(request.decode(data)))
             } catch let error {
-                completion(.failure(error))
+                completion(.failure(.system(.init(error: error))))
             }
         }
 
@@ -56,4 +66,25 @@ final class RealNetworkService: NetworkService {
     func cancel(requestUUID: UUID) {
         runningRequests[requestUUID]?.cancel()
     }
+}
+
+final class MockNetworkService: NetworkService {
+    var shouldFail: Bool = false
+    var completionTime: TimeInterval = 0
+
+    func request<Request: DataRequest>(_ request: Request, completion: @escaping (Result<Request.Response, NetworkError>) -> Void) -> UUID {
+        DispatchQueue.main.asyncAfter(deadline: .now() + completionTime) { [weak self] in
+            if let mock = request.mock, self?.shouldFail == false {
+                completion(.success(mock))
+            } else if request.mock == nil {
+                completion(.failure(NetworkError.noData))
+            } else {
+                completion(.failure(NetworkError.unknown))
+            }
+        }
+
+        return UUID()
+    }
+
+    func cancel(requestUUID: UUID) { }
 }

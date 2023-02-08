@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LinkItem: Hashable, Decodable {
+struct LinkItem: Hashable, Decodable, Equatable {
     let name: String
     let kind: String
     let logoURL: String?

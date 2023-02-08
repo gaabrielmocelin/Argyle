@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum SearchState {
+enum SearchState: Equatable {
     case empty
     case loading
     case loaded(items: [LinkItem])
-    case error(Error)
+    case error(NetworkError)
 }
 
 protocol SearchViewModelDelegate: AnyObject {
@@ -49,7 +49,7 @@ final class SearchViewModel {
         }
     }
 
-    private func fetchItems(searchText: String?) {
+    func fetchItems(searchText: String?) {
         guard let searchText, searchText.trimmingCharacters(in: .whitespacesAndNewlines).count > 1 else {
             state = .empty
             return

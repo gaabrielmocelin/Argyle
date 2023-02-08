@@ -25,6 +25,8 @@ protocol DataRequest {
     var headers: [String: String] { get }
     var queryItems: [String: String] { get }
 
+    var mock: Response? { get }
+
     func decode(_ data: Data) throws -> Response
 }
 
@@ -39,6 +41,10 @@ extension DataRequest {
 
     var queryItems: [String: String] {
         [:]
+    }
+
+    var mock: Response? {
+        nil
     }
 
     var method: HTTPMethod {

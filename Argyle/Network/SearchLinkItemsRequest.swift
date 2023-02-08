@@ -32,6 +32,16 @@ struct SearchLinkItemsRequest: DataRequest {
     func decode(_ data: Data) throws -> [LinkItem] {
         try JSONDecoder().decode(LinkItemsResponse.self, from: data).results
     }
+
+    var mock: [LinkItem]? {
+        [
+            .init(name: "Amazon", kind: "employer", logoURL: nil),
+            .init(name: "DoorDash", kind: "gig", logoURL: nil),
+            .init(name: "GrubHub", kind: "gig", logoURL: nil),
+            .init(name: "Gusto", kind: "platform", logoURL: nil),
+            .init(name: "Lyft", kind: "gig", logoURL: nil),
+        ]
+    }
 }
 
 struct LinkItemsResponse: Decodable {
