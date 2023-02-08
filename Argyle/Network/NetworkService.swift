@@ -13,16 +13,25 @@ enum NetworkError: Error {
 }
 
 protocol NetworkService {
-    func request<Request: DataRequest>(_ request: Request, completion: @escaping (Result<Request.Response, Error>) -> Void)
+    @discardableResult
+    func request<Request: DataRequest>(_ request: Request, completion: @escaping (Result<Request.Response, Error>) -> Void) -> UUID
+    func cancel(requestUUID: UUID)
 }
 
-struct RealNetworkService: NetworkService {
-    func request<Request: DataRequest>(_ request: Request, completion: @escaping (Result<Request.Response, Error>) -> Void) {
+final class RealNetworkService: NetworkService {
+    var runningRequests: [UUID: URLSessionDataTask] = [:]
+
+    @discardableResult
+    func request<Request: DataRequest>(_ request: Request, completion: @escaping (Result<Request.Response, Error>) -> Void) -> UUID {
         var urlRequest = URLRequest(url: request.url)
         urlRequest.httpMethod = request.method.rawValue
         urlRequest.allHTTPHeaderFields = request.headers
 
-        URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+        let uuid = UUID()
+
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            defer { self.runningRequests[uuid] = nil }
+
             if let error {
                 return completion(.failure(error))
             }
@@ -37,6 +46,14 @@ struct RealNetworkService: NetworkService {
                 completion(.failure(error))
             }
         }
-        .resume()
+
+        runningRequests[uuid] = task
+        task.resume()
+
+        return uuid
+    }
+
+    func cancel(requestUUID: UUID) {
+        runningRequests[requestUUID]?.cancel()
     }
 }

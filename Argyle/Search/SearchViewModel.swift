@@ -19,6 +19,8 @@ protocol SearchViewModelDelegate: AnyObject {
 }
 
 final class SearchViewModel {
+    private let networkService: NetworkService
+
     private var searchTimer: Timer?
 
     private(set) var state: SearchState = .empty {
@@ -32,6 +34,10 @@ final class SearchViewModel {
 
     weak var delegate: SearchViewModelDelegate? {
         didSet { delegate?.didUpdateState(state) }
+    }
+
+    init(networkService: NetworkService = RealNetworkService()) {
+        self.networkService = networkService
     }
 
     func search(for searchText: String?) {
@@ -51,7 +57,7 @@ final class SearchViewModel {
 
         state = .loading
 
-        RealNetworkService().request(SearchLinkItemsRequest(text: searchText)) { [weak self] result in
+        networkService.request(SearchLinkItemsRequest(text: searchText)) { [weak self] result in
             switch result {
             case .success(let items):
                 self?.state = .loaded(items: items)
@@ -59,16 +65,5 @@ final class SearchViewModel {
                 self?.state = .error(error)
             }
         }
-    }
-}
-
-struct LinkItem: Hashable, Decodable {
-    let name: String
-    let kind: String
-    let logoURL: String?
-
-    enum CodingKeys: String, CodingKey {
-        case name, kind
-        case logoURL = "logo_url"
     }
 }

@@ -35,8 +35,8 @@ class SearchViewController: UIViewController {
     }
 
     private func setupTableView() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.dataSource = makeDataSource()
+        tableView.register(type: LinkItemCell.self)
+        tableView.dataSource = dataSource
         tableView.delegate = self
 
         tableView.separatorStyle = .none
@@ -99,12 +99,8 @@ extension SearchViewController {
 
     private func makeDataSource() -> SearchDatasource {
         SearchDatasource(tableView: tableView) { tableView, indexPath, item in
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
-            cell.contentConfiguration = UIHostingConfiguration {
-                LinkItemView(linkItem: item)
-            }
-
+            let cell = tableView.dequeueReusableCell(for: indexPath, of: LinkItemCell.self)
+            cell.setup(viewModel: .init(item: item))
             return cell
         }
     }
