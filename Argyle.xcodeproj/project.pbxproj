@@ -13,8 +13,6 @@
 		E17B65E12991F9060081E228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E17B65E02991F9060081E228 /* Assets.xcassets */; };
 		E17B65E42991F9060081E228 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E17B65E22991F9060081E228 /* LaunchScreen.storyboard */; };
 		E17B65EF2991F9060081E228 /* ArgyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17B65EE2991F9060081E228 /* ArgyleTests.swift */; };
-		E17B65F92991F9060081E228 /* ArgyleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17B65F82991F9060081E228 /* ArgyleUITests.swift */; };
-		E17B65FB2991F9060081E228 /* ArgyleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17B65FA2991F9060081E228 /* ArgyleUITestsLaunchTests.swift */; };
 		E1A22CD02993FE3000719812 /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A22CCF2993FE3000719812 /* ImageRequest.swift */; };
 		E1A22CD22994067C00719812 /* LinkItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A22CD12994067C00719812 /* LinkItemCell.swift */; };
 		E1A22CD4299408D000719812 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A22CD3299408D000719812 /* ReusableView.swift */; };
@@ -35,13 +33,6 @@
 			remoteGlobalIDString = E17B65D32991F9040081E228;
 			remoteInfo = Argyle;
 		};
-		E17B65F52991F9060081E228 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E17B65CC2991F9040081E228 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E17B65D32991F9040081E228;
-			remoteInfo = Argyle;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -54,9 +45,6 @@
 		E17B65E52991F9060081E228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E17B65EA2991F9060081E228 /* ArgyleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArgyleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E17B65EE2991F9060081E228 /* ArgyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgyleTests.swift; sourceTree = "<group>"; };
-		E17B65F42991F9060081E228 /* ArgyleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArgyleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E17B65F82991F9060081E228 /* ArgyleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgyleUITests.swift; sourceTree = "<group>"; };
-		E17B65FA2991F9060081E228 /* ArgyleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgyleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E1A22CCF2993FE3000719812 /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
 		E1A22CD12994067C00719812 /* LinkItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkItemCell.swift; sourceTree = "<group>"; };
 		E1A22CD3299408D000719812 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
@@ -84,13 +72,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E17B65F12991F9060081E228 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -99,7 +80,6 @@
 			children = (
 				E17B65D62991F9040081E228 /* Argyle */,
 				E17B65ED2991F9060081E228 /* ArgyleTests */,
-				E17B65F72991F9060081E228 /* ArgyleUITests */,
 				E17B65D52991F9040081E228 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -109,7 +89,6 @@
 			children = (
 				E17B65D42991F9040081E228 /* Argyle.app */,
 				E17B65EA2991F9060081E228 /* ArgyleTests.xctest */,
-				E17B65F42991F9060081E228 /* ArgyleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,15 +116,6 @@
 				E1A22CDA29942B0600719812 /* SearchViewModelUnitTests.swift */,
 			);
 			path = ArgyleTests;
-			sourceTree = "<group>";
-		};
-		E17B65F72991F9060081E228 /* ArgyleUITests */ = {
-			isa = PBXGroup;
-			children = (
-				E17B65F82991F9060081E228 /* ArgyleUITests.swift */,
-				E17B65FA2991F9060081E228 /* ArgyleUITestsLaunchTests.swift */,
-			);
-			path = ArgyleUITests;
 			sourceTree = "<group>";
 		};
 		E1A22CD52994091B00719812 /* Utils */ = {
@@ -224,24 +194,6 @@
 			productReference = E17B65EA2991F9060081E228 /* ArgyleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E17B65F32991F9060081E228 /* ArgyleUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E17B66042991F9060081E228 /* Build configuration list for PBXNativeTarget "ArgyleUITests" */;
-			buildPhases = (
-				E17B65F02991F9060081E228 /* Sources */,
-				E17B65F12991F9060081E228 /* Frameworks */,
-				E17B65F22991F9060081E228 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E17B65F62991F9060081E228 /* PBXTargetDependency */,
-			);
-			name = ArgyleUITests;
-			productName = ArgyleUITests;
-			productReference = E17B65F42991F9060081E228 /* ArgyleUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -256,10 +208,6 @@
 						CreatedOnToolsVersion = 14.2;
 					};
 					E17B65E92991F9060081E228 = {
-						CreatedOnToolsVersion = 14.2;
-						TestTargetID = E17B65D32991F9040081E228;
-					};
-					E17B65F32991F9060081E228 = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = E17B65D32991F9040081E228;
 					};
@@ -280,7 +228,6 @@
 			targets = (
 				E17B65D32991F9040081E228 /* Argyle */,
 				E17B65E92991F9060081E228 /* ArgyleTests */,
-				E17B65F32991F9060081E228 /* ArgyleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -296,13 +243,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E17B65E82991F9060081E228 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E17B65F22991F9060081E228 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -340,15 +280,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E17B65F02991F9060081E228 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E17B65FB2991F9060081E228 /* ArgyleUITestsLaunchTests.swift in Sources */,
-				E17B65F92991F9060081E228 /* ArgyleUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -356,11 +287,6 @@
 			isa = PBXTargetDependency;
 			target = E17B65D32991F9040081E228 /* Argyle */;
 			targetProxy = E17B65EB2991F9060081E228 /* PBXContainerItemProxy */;
-		};
-		E17B65F62991F9060081E228 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E17B65D32991F9040081E228 /* Argyle */;
-			targetProxy = E17B65F52991F9060081E228 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -584,40 +510,6 @@
 			};
 			name = Release;
 		};
-		E17B66052991F9060081E228 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gabriel.mocelin.ArgyleUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Argyle;
-			};
-			name = Debug;
-		};
-		E17B66062991F9060081E228 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gabriel.mocelin.ArgyleUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Argyle;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -644,15 +536,6 @@
 			buildConfigurations = (
 				E17B66022991F9060081E228 /* Debug */,
 				E17B66032991F9060081E228 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E17B66042991F9060081E228 /* Build configuration list for PBXNativeTarget "ArgyleUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E17B66052991F9060081E228 /* Debug */,
-				E17B66062991F9060081E228 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
