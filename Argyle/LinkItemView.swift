@@ -33,6 +33,6 @@ struct LinkItemView: View {
 
 struct LinkItemView_Previews: PreviewProvider {
     static var previews: some View {
-        LinkItemView(linkItem: .init(name: "Test"))
+        LinkItemView(linkItem: .init(name: "Test", kind: "Employer", logoURL: nil))
     }
 }
