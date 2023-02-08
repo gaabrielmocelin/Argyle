@@ -41,12 +41,7 @@ class SearchViewController: UIViewController {
 
         tableView.separatorStyle = .none
 
-        view.addSubview(tableView)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        view.addSubviewMatchingConstraints(tableView)
     }
 
     private func setupSearchBar() {
@@ -63,21 +58,21 @@ class SearchViewController: UIViewController {
         label.textColor = .secondaryLabel
         label.font = .systemFont(ofSize: 14, weight: .light)
 
-        view.addSubview(label)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
-        label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
-        label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        label.heightAnchor.constraint(lessThanOrEqualToConstant: 300).isActive = true
+        view.addSubview(label) { view, label in
+            label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
+            label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+            label.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            label.heightAnchor.constraint(lessThanOrEqualToConstant: 300)
+        }
     }
 
     private func setupActivityIndicator() {
         activityIndicator.hidesWhenStopped = true
 
-        view.addSubview(activityIndicator)
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        view.addSubview(activityIndicator) { view, activityIndicator in
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        }
     }
 
     private func set(items: [LinkItem]) {

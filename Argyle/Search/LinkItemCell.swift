@@ -55,7 +55,7 @@ final class LinkItemCell: UITableViewCell {
     var viewModel: LinkItemCellViewModel?
 
     private let placeholderImage = UIImage(systemName: "photo")?.resizeImageTo(size: .init(width: 24, height: 24))
-    private let logoBackgroundView = UIImageView()
+    private let logoBackgroundView = UIView()
     private lazy var logoImageView = UIImageView(image: placeholderImage)
 
     private let nameLabel = UILabel()
@@ -86,19 +86,19 @@ final class LinkItemCell: UITableViewCell {
         logoImageView.contentMode = .scaleAspectFit
         logoImageView.tintColor = .label
 
-        contentView.addSubview(logoBackgroundView)
-        logoBackgroundView.translatesAutoresizingMaskIntoConstraints = false
-        logoBackgroundView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
-        logoBackgroundView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        logoBackgroundView.heightAnchor.constraint(equalToConstant: 75).isActive = true
-        logoBackgroundView.widthAnchor.constraint(equalToConstant: 75).isActive = true
+        contentView.addSubview(logoBackgroundView) { contentView, logoBackgroundView in
+            logoBackgroundView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16)
+            logoBackgroundView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+            logoBackgroundView.heightAnchor.constraint(equalToConstant: 75)
+            logoBackgroundView.widthAnchor.constraint(equalToConstant: 75)
+        }
 
-        logoBackgroundView.addSubview(logoImageView)
-        logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        logoImageView.centerYAnchor.constraint(equalTo: logoBackgroundView.centerYAnchor).isActive = true
-        logoImageView.centerXAnchor.constraint(equalTo: logoBackgroundView.centerXAnchor).isActive = true
-        logoImageView.heightAnchor.constraint(lessThanOrEqualTo: logoBackgroundView.heightAnchor).isActive = true
-        logoImageView.widthAnchor.constraint(lessThanOrEqualTo: logoBackgroundView.widthAnchor).isActive = true
+        logoBackgroundView.addSubview(logoImageView) { logoBackgroundView, logoImageView in
+            logoImageView.centerYAnchor.constraint(equalTo: logoBackgroundView.centerYAnchor)
+            logoImageView.centerXAnchor.constraint(equalTo: logoBackgroundView.centerXAnchor)
+            logoImageView.heightAnchor.constraint(lessThanOrEqualTo: logoBackgroundView.heightAnchor)
+            logoImageView.widthAnchor.constraint(lessThanOrEqualTo: logoBackgroundView.widthAnchor)
+        }
     }
 
     private func setupLabelsStack() {
