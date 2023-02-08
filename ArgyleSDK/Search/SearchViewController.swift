@@ -105,6 +105,14 @@ extension SearchViewController {
 extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+
+        guard case .loaded(let items) = viewModel.state else { return }
+
+        let hostController = UIHostingController(rootView: LinkItemDetailView(linkItem: items[indexPath.row]))
+        hostController.modalPresentationStyle = .pageSheet
+        hostController.sheetPresentationController?.detents = [.medium()]
+        hostController.sheetPresentationController?.prefersGrabberVisible = true
+        present(hostController, animated: true)
     }
 }
 

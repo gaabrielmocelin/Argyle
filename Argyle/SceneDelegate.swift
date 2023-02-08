@@ -14,7 +14,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
 
-        Argyle.shared.apiKey = "kXatSEqBrGIaHeCp"
+        Argyle.shared.apiKeyId = "9b40eed7b1d14f16ba3abfad216167e8"
+        Argyle.shared.apiKeySecret = "kXatSEqBrGIaHeCp" // This secret should have been stored on a Secrets file ignored by git
 
         window = UIWindow(windowScene: scene)
         window?.makeKeyAndVisible()

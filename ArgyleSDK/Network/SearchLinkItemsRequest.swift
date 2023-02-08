@@ -25,7 +25,13 @@ struct SearchLinkItemsRequest: DataRequest {
     }
 
     var headers: [String : String] {
-        ["9b40eed7b1d14f16ba3abfad216167e8": Argyle.shared.apiKey ?? ""]
+        var dict = ["accept": "application/json"]
+
+        if let authKey = Argyle.shared.authKey {
+            dict["authorization"] = "Basic \(authKey)"
+        }
+
+        return dict
     }
 
     func decode(_ data: Data) throws -> [LinkItem] {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E15B08E52994634800D9A09F /* LinkItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15B08E42994634800D9A09F /* LinkItemDetailView.swift */; };
 		E17B65D82991F9040081E228 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17B65D72991F9040081E228 /* AppDelegate.swift */; };
 		E17B65DA2991F9040081E228 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17B65D92991F9040081E228 /* SceneDelegate.swift */; };
 		E17B65E12991F9060081E228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E17B65E02991F9060081E228 /* Assets.xcassets */; };
@@ -68,6 +69,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E15B08E42994634800D9A09F /* LinkItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkItemDetailView.swift; sourceTree = "<group>"; };
 		E17B65D42991F9040081E228 /* Argyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Argyle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E17B65D72991F9040081E228 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E17B65D92991F9040081E228 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E15B08E32994632300D9A09F /* LinkItemDetail */ = {
+			isa = PBXGroup;
+			children = (
+				E15B08E42994634800D9A09F /* LinkItemDetailView.swift */,
+			);
+			path = LinkItemDetail;
+			sourceTree = "<group>";
+		};
 		E17B65CB2991F9040081E228 = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +194,7 @@
 				E1A22CD52994091B00719812 /* Utils */,
 				E1A830E429930C02005E81DE /* Network */,
 				E1A22CD62994097200719812 /* Search */,
+				E15B08E32994632300D9A09F /* LinkItemDetail */,
 				E1A22CD72994098000719812 /* Model */,
 				E1A22D3129944DA900719812 /* Argyle.swift */,
 			);
@@ -367,6 +378,7 @@
 				E1A22D3229944DA900719812 /* Argyle.swift in Sources */,
 				E1A22D2E29944D4B00719812 /* SearchViewController.swift in Sources */,
 				E1A22D2A29944D4400719812 /* DataRequest.swift in Sources */,
+				E15B08E52994634800D9A09F /* LinkItemDetailView.swift in Sources */,
 				E1A22D2929944D4400719812 /* ImageRequest.swift in Sources */,
 				E1A22D2829944D4400719812 /* SearchLinkItemsRequest.swift in Sources */,
 				E1A22D2B29944D4400719812 /* NetworkService.swift in Sources */,
