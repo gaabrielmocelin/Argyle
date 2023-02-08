@@ -6,14 +6,14 @@
 //
 
 import XCTest
-@testable import Argyle
+@testable import ArgyleSDK
 
 class SearchDelegate: SearchViewModelDelegate {
     var count = 0
     var expectation: XCTestExpectation!
 
 
-    func didUpdateState(_ state: Argyle.SearchState) {
+    func didUpdateState(_ state: SearchState) {
         count += 1
 
         switch state {

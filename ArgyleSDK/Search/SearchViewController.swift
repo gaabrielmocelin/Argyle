@@ -9,7 +9,7 @@ import UIKit
 import SwiftUI
 
 class SearchViewController: UIViewController {
-    private let viewModel: SearchViewModel = SearchViewModel()
+    private let viewModel: SearchViewModel
     private lazy var dataSource = makeDataSource()
 
     private let tableView = UITableView()
@@ -17,7 +17,8 @@ class SearchViewController: UIViewController {
     private let activityIndicator = UIActivityIndicatorView(style: .large)
     private let label = UILabel()
 
-    init() {
+    init(viewModel: SearchViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
 

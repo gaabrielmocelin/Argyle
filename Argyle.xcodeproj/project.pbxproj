@@ -9,31 +9,63 @@
 /* Begin PBXBuildFile section */
 		E17B65D82991F9040081E228 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17B65D72991F9040081E228 /* AppDelegate.swift */; };
 		E17B65DA2991F9040081E228 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17B65D92991F9040081E228 /* SceneDelegate.swift */; };
-		E17B65DC2991F9040081E228 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17B65DB2991F9040081E228 /* SearchViewController.swift */; };
 		E17B65E12991F9060081E228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E17B65E02991F9060081E228 /* Assets.xcassets */; };
 		E17B65E42991F9060081E228 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E17B65E22991F9060081E228 /* LaunchScreen.storyboard */; };
-		E17B65EF2991F9060081E228 /* ArgyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17B65EE2991F9060081E228 /* ArgyleTests.swift */; };
-		E1A22CD02993FE3000719812 /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A22CCF2993FE3000719812 /* ImageRequest.swift */; };
-		E1A22CD22994067C00719812 /* LinkItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A22CD12994067C00719812 /* LinkItemCell.swift */; };
-		E1A22CD4299408D000719812 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A22CD3299408D000719812 /* ReusableView.swift */; };
-		E1A22CD92994151400719812 /* AutoLayoutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A22CD82994151400719812 /* AutoLayoutBuilder.swift */; };
-		E1A22CDB29942B0600719812 /* SearchViewModelUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A22CDA29942B0600719812 /* SearchViewModelUnitTests.swift */; };
-		E1A830DB2992CE19005E81DE /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A830DA2992CE19005E81DE /* SearchViewModel.swift */; };
-		E1A830DD2992DBD9005E81DE /* LinkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A830DC2992DBD9005E81DE /* LinkItem.swift */; };
-		E1A830DF2992FB29005E81DE /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A830DE2992FB29005E81DE /* DataRequest.swift */; };
-		E1A830E32993043D005E81DE /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A830E22993043D005E81DE /* NetworkService.swift */; };
-		E1A830E629930EF5005E81DE /* SearchLinkItemsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A830E529930EF5005E81DE /* SearchLinkItemsRequest.swift */; };
+		E1A22D1229944CD400719812 /* ArgyleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A22D0A29944CD400719812 /* ArgyleSDK.framework */; };
+		E1A22D1A29944CD400719812 /* ArgyleSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = E1A22D0C29944CD400719812 /* ArgyleSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E1A22D1D29944CD400719812 /* ArgyleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A22D0A29944CD400719812 /* ArgyleSDK.framework */; };
+		E1A22D1E29944CD400719812 /* ArgyleSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1A22D0A29944CD400719812 /* ArgyleSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E1A22D2629944D3F00719812 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A22CD3299408D000719812 /* ReusableView.swift */; };
+		E1A22D2729944D3F00719812 /* AutoLayoutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A22CD82994151400719812 /* AutoLayoutBuilder.swift */; };
+		E1A22D2829944D4400719812 /* SearchLinkItemsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A830E529930EF5005E81DE /* SearchLinkItemsRequest.swift */; };
+		E1A22D2929944D4400719812 /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A22CCF2993FE3000719812 /* ImageRequest.swift */; };
+		E1A22D2A29944D4400719812 /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A830DE2992FB29005E81DE /* DataRequest.swift */; };
+		E1A22D2B29944D4400719812 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A830E22993043D005E81DE /* NetworkService.swift */; };
+		E1A22D2C29944D4B00719812 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A830DA2992CE19005E81DE /* SearchViewModel.swift */; };
+		E1A22D2D29944D4B00719812 /* LinkItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A22CD12994067C00719812 /* LinkItemCell.swift */; };
+		E1A22D2E29944D4B00719812 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17B65DB2991F9040081E228 /* SearchViewController.swift */; };
+		E1A22D2F29944D4F00719812 /* LinkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A830DC2992DBD9005E81DE /* LinkItem.swift */; };
+		E1A22D3029944D7A00719812 /* SearchViewModelUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A22CDA29942B0600719812 /* SearchViewModelUnitTests.swift */; };
+		E1A22D3229944DA900719812 /* Argyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A22D3129944DA900719812 /* Argyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E17B65EB2991F9060081E228 /* PBXContainerItemProxy */ = {
+		E1A22D1329944CD400719812 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E17B65CC2991F9040081E228 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1A22D0929944CD400719812;
+			remoteInfo = ArgyleSDK;
+		};
+		E1A22D1529944CD400719812 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E17B65CC2991F9040081E228 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E17B65D32991F9040081E228;
 			remoteInfo = Argyle;
 		};
+		E1A22D1B29944CD400719812 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E17B65CC2991F9040081E228 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1A22D0929944CD400719812;
+			remoteInfo = ArgyleSDK;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E1A22D1F29944CD400719812 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E1A22D1E29944CD400719812 /* ArgyleSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E17B65D42991F9040081E228 /* Argyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Argyle.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,13 +75,15 @@
 		E17B65E02991F9060081E228 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E17B65E32991F9060081E228 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E17B65E52991F9060081E228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E17B65EA2991F9060081E228 /* ArgyleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArgyleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E17B65EE2991F9060081E228 /* ArgyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgyleTests.swift; sourceTree = "<group>"; };
 		E1A22CCF2993FE3000719812 /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
 		E1A22CD12994067C00719812 /* LinkItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkItemCell.swift; sourceTree = "<group>"; };
 		E1A22CD3299408D000719812 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		E1A22CD82994151400719812 /* AutoLayoutBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutBuilder.swift; sourceTree = "<group>"; };
 		E1A22CDA29942B0600719812 /* SearchViewModelUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelUnitTests.swift; sourceTree = "<group>"; };
+		E1A22D0A29944CD400719812 /* ArgyleSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ArgyleSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1A22D0C29944CD400719812 /* ArgyleSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArgyleSDK.h; sourceTree = "<group>"; };
+		E1A22D1129944CD400719812 /* ArgyleSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArgyleSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1A22D3129944DA900719812 /* Argyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Argyle.swift; sourceTree = "<group>"; };
 		E1A830DA2992CE19005E81DE /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		E1A830DC2992DBD9005E81DE /* LinkItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkItem.swift; sourceTree = "<group>"; };
 		E1A830DE2992FB29005E81DE /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
@@ -62,13 +96,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1A22D1D29944CD400719812 /* ArgyleSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E17B65E72991F9060081E228 /* Frameworks */ = {
+		E1A22D0729944CD400719812 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1A22D0E29944CD400719812 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1A22D1229944CD400719812 /* ArgyleSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,7 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				E17B65D62991F9040081E228 /* Argyle */,
-				E17B65ED2991F9060081E228 /* ArgyleTests */,
+				E1A22D0B29944CD400719812 /* ArgyleSDK */,
+				E1A22D1729944CD400719812 /* ArgyleSDKTests */,
 				E17B65D52991F9040081E228 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,7 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				E17B65D42991F9040081E228 /* Argyle.app */,
-				E17B65EA2991F9060081E228 /* ArgyleTests.xctest */,
+				E1A22D0A29944CD400719812 /* ArgyleSDK.framework */,
+				E1A22D1129944CD400719812 /* ArgyleSDKTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,10 +141,6 @@
 		E17B65D62991F9040081E228 /* Argyle */ = {
 			isa = PBXGroup;
 			children = (
-				E1A22CD52994091B00719812 /* Utils */,
-				E1A830E429930C02005E81DE /* Network */,
-				E1A22CD62994097200719812 /* Search */,
-				E1A22CD72994098000719812 /* Model */,
 				E17B65D72991F9040081E228 /* AppDelegate.swift */,
 				E17B65D92991F9040081E228 /* SceneDelegate.swift */,
 				E17B65E02991F9060081E228 /* Assets.xcassets */,
@@ -107,15 +148,6 @@
 				E17B65E52991F9060081E228 /* Info.plist */,
 			);
 			path = Argyle;
-			sourceTree = "<group>";
-		};
-		E17B65ED2991F9060081E228 /* ArgyleTests */ = {
-			isa = PBXGroup;
-			children = (
-				E17B65EE2991F9060081E228 /* ArgyleTests.swift */,
-				E1A22CDA29942B0600719812 /* SearchViewModelUnitTests.swift */,
-			);
-			path = ArgyleTests;
 			sourceTree = "<group>";
 		};
 		E1A22CD52994091B00719812 /* Utils */ = {
@@ -145,6 +177,27 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E1A22D0B29944CD400719812 /* ArgyleSDK */ = {
+			isa = PBXGroup;
+			children = (
+				E1A22D0C29944CD400719812 /* ArgyleSDK.h */,
+				E1A22CD52994091B00719812 /* Utils */,
+				E1A830E429930C02005E81DE /* Network */,
+				E1A22CD62994097200719812 /* Search */,
+				E1A22CD72994098000719812 /* Model */,
+				E1A22D3129944DA900719812 /* Argyle.swift */,
+			);
+			path = ArgyleSDK;
+			sourceTree = "<group>";
+		};
+		E1A22D1729944CD400719812 /* ArgyleSDKTests */ = {
+			isa = PBXGroup;
+			children = (
+				E1A22CDA29942B0600719812 /* SearchViewModelUnitTests.swift */,
+			);
+			path = ArgyleSDKTests;
+			sourceTree = "<group>";
+		};
 		E1A830E429930C02005E81DE /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +211,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		E1A22D0529944CD400719812 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1A22D1A29944CD400719812 /* ArgyleSDK.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		E17B65D32991F9040081E228 /* Argyle */ = {
 			isa = PBXNativeTarget;
@@ -166,32 +230,53 @@
 				E17B65D02991F9040081E228 /* Sources */,
 				E17B65D12991F9040081E228 /* Frameworks */,
 				E17B65D22991F9040081E228 /* Resources */,
+				E1A22D1F29944CD400719812 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E1A22D1C29944CD400719812 /* PBXTargetDependency */,
 			);
 			name = Argyle;
 			productName = Argyle;
 			productReference = E17B65D42991F9040081E228 /* Argyle.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E17B65E92991F9060081E228 /* ArgyleTests */ = {
+		E1A22D0929944CD400719812 /* ArgyleSDK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E17B66012991F9060081E228 /* Build configuration list for PBXNativeTarget "ArgyleTests" */;
+			buildConfigurationList = E1A22D2429944CD400719812 /* Build configuration list for PBXNativeTarget "ArgyleSDK" */;
 			buildPhases = (
-				E17B65E62991F9060081E228 /* Sources */,
-				E17B65E72991F9060081E228 /* Frameworks */,
-				E17B65E82991F9060081E228 /* Resources */,
+				E1A22D0529944CD400719812 /* Headers */,
+				E1A22D0629944CD400719812 /* Sources */,
+				E1A22D0729944CD400719812 /* Frameworks */,
+				E1A22D0829944CD400719812 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E17B65EC2991F9060081E228 /* PBXTargetDependency */,
 			);
-			name = ArgyleTests;
-			productName = ArgyleTests;
-			productReference = E17B65EA2991F9060081E228 /* ArgyleTests.xctest */;
+			name = ArgyleSDK;
+			productName = ArgyleSDK;
+			productReference = E1A22D0A29944CD400719812 /* ArgyleSDK.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E1A22D1029944CD400719812 /* ArgyleSDKTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1A22D2529944CD400719812 /* Build configuration list for PBXNativeTarget "ArgyleSDKTests" */;
+			buildPhases = (
+				E1A22D0D29944CD400719812 /* Sources */,
+				E1A22D0E29944CD400719812 /* Frameworks */,
+				E1A22D0F29944CD400719812 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E1A22D1429944CD400719812 /* PBXTargetDependency */,
+				E1A22D1629944CD400719812 /* PBXTargetDependency */,
+			);
+			name = ArgyleSDKTests;
+			productName = ArgyleSDKTests;
+			productReference = E1A22D1129944CD400719812 /* ArgyleSDKTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -207,7 +292,10 @@
 					E17B65D32991F9040081E228 = {
 						CreatedOnToolsVersion = 14.2;
 					};
-					E17B65E92991F9060081E228 = {
+					E1A22D0929944CD400719812 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					E1A22D1029944CD400719812 = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = E17B65D32991F9040081E228;
 					};
@@ -227,7 +315,8 @@
 			projectRoot = "";
 			targets = (
 				E17B65D32991F9040081E228 /* Argyle */,
-				E17B65E92991F9060081E228 /* ArgyleTests */,
+				E1A22D0929944CD400719812 /* ArgyleSDK */,
+				E1A22D1029944CD400719812 /* ArgyleSDKTests */,
 			);
 		};
 /* End PBXProject section */
@@ -242,7 +331,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E17B65E82991F9060081E228 /* Resources */ = {
+		E1A22D0829944CD400719812 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1A22D0F29944CD400719812 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -256,37 +352,54 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1A22CD22994067C00719812 /* LinkItemCell.swift in Sources */,
-				E1A830DD2992DBD9005E81DE /* LinkItem.swift in Sources */,
-				E1A22CD4299408D000719812 /* ReusableView.swift in Sources */,
-				E1A830E32993043D005E81DE /* NetworkService.swift in Sources */,
-				E1A22CD92994151400719812 /* AutoLayoutBuilder.swift in Sources */,
-				E17B65DC2991F9040081E228 /* SearchViewController.swift in Sources */,
-				E1A830E629930EF5005E81DE /* SearchLinkItemsRequest.swift in Sources */,
 				E17B65D82991F9040081E228 /* AppDelegate.swift in Sources */,
-				E1A830DB2992CE19005E81DE /* SearchViewModel.swift in Sources */,
-				E1A830DF2992FB29005E81DE /* DataRequest.swift in Sources */,
 				E17B65DA2991F9040081E228 /* SceneDelegate.swift in Sources */,
-				E1A22CD02993FE3000719812 /* ImageRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E17B65E62991F9060081E228 /* Sources */ = {
+		E1A22D0629944CD400719812 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1A22CDB29942B0600719812 /* SearchViewModelUnitTests.swift in Sources */,
-				E17B65EF2991F9060081E228 /* ArgyleTests.swift in Sources */,
+				E1A22D2729944D3F00719812 /* AutoLayoutBuilder.swift in Sources */,
+				E1A22D2C29944D4B00719812 /* SearchViewModel.swift in Sources */,
+				E1A22D2D29944D4B00719812 /* LinkItemCell.swift in Sources */,
+				E1A22D3229944DA900719812 /* Argyle.swift in Sources */,
+				E1A22D2E29944D4B00719812 /* SearchViewController.swift in Sources */,
+				E1A22D2A29944D4400719812 /* DataRequest.swift in Sources */,
+				E1A22D2929944D4400719812 /* ImageRequest.swift in Sources */,
+				E1A22D2829944D4400719812 /* SearchLinkItemsRequest.swift in Sources */,
+				E1A22D2B29944D4400719812 /* NetworkService.swift in Sources */,
+				E1A22D2F29944D4F00719812 /* LinkItem.swift in Sources */,
+				E1A22D2629944D3F00719812 /* ReusableView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1A22D0D29944CD400719812 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1A22D3029944D7A00719812 /* SearchViewModelUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E17B65EC2991F9060081E228 /* PBXTargetDependency */ = {
+		E1A22D1429944CD400719812 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E1A22D0929944CD400719812 /* ArgyleSDK */;
+			targetProxy = E1A22D1329944CD400719812 /* PBXContainerItemProxy */;
+		};
+		E1A22D1629944CD400719812 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E17B65D32991F9040081E228 /* Argyle */;
-			targetProxy = E17B65EB2991F9060081E228 /* PBXContainerItemProxy */;
+			targetProxy = E1A22D1529944CD400719812 /* PBXContainerItemProxy */;
+		};
+		E1A22D1C29944CD400719812 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E1A22D0929944CD400719812 /* ArgyleSDK */;
+			targetProxy = E1A22D1B29944CD400719812 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -419,6 +532,7 @@
 		E17B65FF2991F9060081E228 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -447,6 +561,7 @@
 		E17B66002991F9060081E228 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -472,17 +587,76 @@
 			};
 			name = Release;
 		};
-		E17B66022991F9060081E228 /* Debug */ = {
+		E1A22D2029944CD400719812 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gabriel.mocelin.ArgyleSDK;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E1A22D2129944CD400719812 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gabriel.mocelin.ArgyleSDK;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E1A22D2229944CD400719812 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gabriel.mocelin.ArgyleTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gabriel.mocelin.ArgyleSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -491,17 +665,16 @@
 			};
 			name = Debug;
 		};
-		E17B66032991F9060081E228 /* Release */ = {
+		E1A22D2329944CD400719812 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gabriel.mocelin.ArgyleTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gabriel.mocelin.ArgyleSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -531,11 +704,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E17B66012991F9060081E228 /* Build configuration list for PBXNativeTarget "ArgyleTests" */ = {
+		E1A22D2429944CD400719812 /* Build configuration list for PBXNativeTarget "ArgyleSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E17B66022991F9060081E228 /* Debug */,
-				E17B66032991F9060081E228 /* Release */,
+				E1A22D2029944CD400719812 /* Debug */,
+				E1A22D2129944CD400719812 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1A22D2529944CD400719812 /* Build configuration list for PBXNativeTarget "ArgyleSDKTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1A22D2229944CD400719812 /* Debug */,
+				E1A22D2329944CD400719812 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

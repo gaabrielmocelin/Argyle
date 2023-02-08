@@ -25,8 +25,7 @@ struct SearchLinkItemsRequest: DataRequest {
     }
 
     var headers: [String : String] {
-        // FIX ME: HIDE SECRET!!!
-        ["9b40eed7b1d14f16ba3abfad216167e8": "kXatSEqBrGIaHeCp"]
+        ["9b40eed7b1d14f16ba3abfad216167e8": Argyle.shared.apiKey ?? ""]
     }
 
     func decode(_ data: Data) throws -> [LinkItem] {
