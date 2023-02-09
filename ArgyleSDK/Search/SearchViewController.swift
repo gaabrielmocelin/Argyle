@@ -140,7 +140,7 @@ extension SearchViewController: SearchPresenterDelegate {
         switch state {
         case .empty:
             label.isHidden = false
-            label.text = "Just type the name of the Link Item and we will search it for you!"
+            label.text = Strings.Search.emptyState
 
         case .loading:
             activityIndicator.isHidden = false
@@ -151,7 +151,7 @@ extension SearchViewController: SearchPresenterDelegate {
 
         case .error:
             label.isHidden = false
-            label.text = "Ops! Something went wrong, try it later!"
+            label.text = Strings.Search.somethingWentWrong
         }
     }
 }
