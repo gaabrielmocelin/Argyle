@@ -8,7 +8,7 @@
 import XCTest
 @testable import ArgyleSDK
 
-class SearchDelegate: SearchViewModelDelegate {
+class SearchDelegate: SearchPresenterDelegate {
     var count = 0
     var expectation: XCTestExpectation!
 
@@ -26,14 +26,14 @@ class SearchDelegate: SearchViewModelDelegate {
 }
 
 final class SearchViewModelUnitTests: XCTestCase {
-    var sut: SearchViewModel!
+    var sut: SearchPresenter!
     var networkMock: MockNetworkService!
     var delegate: SearchDelegate!
 
     override func setUpWithError() throws {
         networkMock = MockNetworkService()
         delegate = SearchDelegate()
-        sut = SearchViewModel(networkService: networkMock)
+        sut = SearchPresenter(networkService: networkMock)
         sut.delegate = delegate
     }
 

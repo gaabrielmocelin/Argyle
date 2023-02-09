@@ -1,5 +1,5 @@
 //
-//  SearchViewModel.swift
+//  SearchPresenter.swift
 //  Argyle
 //
 //  Created by Gabriel Mocelin on 07/02/23.
@@ -14,11 +14,11 @@ enum SearchState: Equatable {
     case error(NetworkError)
 }
 
-protocol SearchViewModelDelegate: AnyObject {
+protocol SearchPresenterDelegate: AnyObject {
     func didUpdateState(_ state: SearchState)
 }
 
-final class SearchViewModel {
+final class SearchPresenter {
     private let networkService: NetworkService
 
     private var searchTimer: Timer?
@@ -32,7 +32,7 @@ final class SearchViewModel {
         }
     }
 
-    weak var delegate: SearchViewModelDelegate? {
+    weak var delegate: SearchPresenterDelegate? {
         didSet { delegate?.didUpdateState(state) }
     }
 
@@ -43,7 +43,7 @@ final class SearchViewModel {
     func search(for searchText: String?) {
         searchTimer?.invalidate()
 
-        // Debouncer timer
+        // Debounce timer
         searchTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [weak self] _ in
             self?.fetchItems(searchText: searchText)
         }

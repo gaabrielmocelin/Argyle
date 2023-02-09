@@ -7,52 +7,8 @@
 
 import UIKit
 
-extension UIImage {
-    func resizeImageTo(size: CGSize) -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
-        self.draw(in: CGRect(origin: CGPoint.zero, size: size))
-        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-        return resizedImage
-    }
-}
-
-final class LinkItemCellViewModel {
-    let networkService: NetworkService
-    let item: LinkItem
-
-    var requestUUID: UUID?
-
-    init(networkService: NetworkService = RealNetworkService(), item: LinkItem) {
-        self.networkService = networkService
-        self.item = item
-    }
-
-    func image(completion: @escaping (UIImage?) -> Void) {
-        guard let logoURL = item.logoURL else {
-            completion(nil)
-            return
-        }
-
-        requestUUID = networkService.request(ImageRequest(baseURL: logoURL)) { result in
-            switch result {
-            case .success(let image):
-                completion(image)
-            case .failure:
-                completion(nil)
-            }
-        }
-    }
-
-    func cancelImageRequest() {
-        if let requestUUID {
-            networkService.cancel(requestUUID: requestUUID)
-        }
-    }
-}
-
 final class LinkItemCell: UITableViewCell {
-    var viewModel: LinkItemCellViewModel?
+    var presenter: LinkItemCellPresenter?
 
     private let placeholderImage = UIImage(systemName: "photo")?.resizeImageTo(size: .init(width: 24, height: 24))
     private let logoBackgroundView = UIView()
@@ -74,7 +30,7 @@ final class LinkItemCell: UITableViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        viewModel?.cancelImageRequest()
+        presenter?.cancelImageRequest()
         logoImageView.image = placeholderImage
     }
 
@@ -111,21 +67,21 @@ final class LinkItemCell: UITableViewCell {
         kindLabel.font = .systemFont(ofSize: 14)
         kindLabel.textColor = .secondaryLabel
 
-        contentView.addSubview(labelsStack)
-        labelsStack.translatesAutoresizingMaskIntoConstraints = false
-        labelsStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 24).isActive = true
-        labelsStack.leadingAnchor.constraint(equalTo: logoBackgroundView.trailingAnchor, constant: 16).isActive = true
-        labelsStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
-        labelsStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -24).isActive = true
+        contentView.addSubview(labelsStack) { contentView, labelsStack in
+            labelsStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 24)
+            labelsStack.leadingAnchor.constraint(equalTo: logoBackgroundView.trailingAnchor, constant: 16)
+            labelsStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
+            labelsStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -24)
+        }
     }
 
-    func setup(viewModel: LinkItemCellViewModel) {
-        self.viewModel = viewModel
+    func setup(presenter: LinkItemCellPresenter) {
+        self.presenter = presenter
 
-        nameLabel.text = viewModel.item.name
-        kindLabel.text = viewModel.item.kind
+        nameLabel.text = presenter.item.name
+        kindLabel.text = presenter.item.kind
 
-        viewModel.image { [weak self] image in
+        presenter.image { [weak self] image in
             if let image {
                 DispatchQueue.main.async {
                     self?.logoImageView.image = image

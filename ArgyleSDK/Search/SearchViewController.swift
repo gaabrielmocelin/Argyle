@@ -9,16 +9,20 @@ import UIKit
 import SwiftUI
 
 class SearchViewController: UIViewController {
-    private let viewModel: SearchViewModel
+
+    // MARK: Properties
+    private let presenter: SearchPresenter
     private lazy var dataSource = makeDataSource()
 
+    // MARK: Views
     private let tableView = UITableView()
     private let searchController = UISearchController(searchResultsController: nil)
     private let activityIndicator = UIActivityIndicatorView(style: .large)
     private let label = UILabel()
 
-    init(viewModel: SearchViewModel) {
-        self.viewModel = viewModel
+    // MARK: Life Cycle
+    init(presenter: SearchPresenter) {
+        self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -32,9 +36,10 @@ class SearchViewController: UIViewController {
         setupSearchBar()
         setupActivityIndicator()
         setupLabel()
-        viewModel.delegate = self
+        presenter.delegate = self
     }
 
+    // MARK: Setup UI
     private func setupTableView() {
         tableView.register(type: LinkItemCell.self)
         tableView.dataSource = dataSource
@@ -76,6 +81,7 @@ class SearchViewController: UIViewController {
         }
     }
 
+    // MARK: Update UI
     private func set(items: [LinkItem]) {
         var snapshot = SearchSnapshot()
         snapshot.appendSections(TableSection.allCases)
@@ -96,17 +102,18 @@ extension SearchViewController {
     private func makeDataSource() -> SearchDatasource {
         SearchDatasource(tableView: tableView) { tableView, indexPath, item in
             let cell = tableView.dequeueReusableCell(for: indexPath, of: LinkItemCell.self)
-            cell.setup(viewModel: .init(item: item))
+            cell.setup(presenter: .init(item: item))
             return cell
         }
     }
 }
 
+// MARK: - UITableViewDelegate
 extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        guard case .loaded(let items) = viewModel.state else { return }
+        guard case .loaded(let items) = presenter.state else { return }
 
         let hostController = UIHostingController(rootView: LinkItemDetailView(linkItem: items[indexPath.row]))
         hostController.modalPresentationStyle = .pageSheet
@@ -119,12 +126,12 @@ extension SearchViewController: UITableViewDelegate {
 // MARK: - Search Delegate
 extension SearchViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        viewModel.search(for: searchController.searchBar.text)
+        presenter.search(for: searchController.searchBar.text)
     }
 }
 
 // MARK: - ViewModel Delegate
-extension SearchViewController: SearchViewModelDelegate {
+extension SearchViewController: SearchPresenterDelegate {
     func didUpdateState(_ state: SearchState) {
         activityIndicator.stopAnimating()
         label.isHidden = true

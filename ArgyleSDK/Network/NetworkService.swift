@@ -7,21 +7,6 @@
 
 import Foundation
 
-enum NetworkError: Error, Equatable {
-    case unableToParseJson
-    case noData
-    case unknown
-    case system(ErrorWrapper)
-}
-
-public struct ErrorWrapper: Equatable {
-    let error: Error
-
-    public static func == (lhs: Self, rhs: Self) -> Bool {
-        String(reflecting: lhs.error) == String(reflecting: rhs.error)
-    }
-}
-
 protocol NetworkService {
     @discardableResult
     func request<Request: DataRequest>(_ request: Request, completion: @escaping (Result<Request.Response, NetworkError>) -> Void) -> UUID

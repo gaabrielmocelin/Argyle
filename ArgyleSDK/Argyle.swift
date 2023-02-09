@@ -22,6 +22,6 @@ public final class Argyle {
     private init() { }
 
     public func searchController() -> UIViewController {
-        SearchViewController(viewModel: SearchViewModel())
+        SearchViewController(presenter: SearchPresenter())
     }
 }
